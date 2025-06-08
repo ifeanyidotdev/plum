@@ -1,0 +1,35 @@
+{
+  "name": "plum",
+  "version": "1.0.0",
+  "description": "scafold with ease",
+  "main": "dist/index.js",
+  "bin": {
+    "plum": "dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.8",
+    "@types/node": "^22.15.30",
+    "commander": "^14.0.0",
+    "inquirer": "^12.6.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.3.0"
+  }
+}
