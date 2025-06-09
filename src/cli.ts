@@ -15,9 +15,9 @@ program
     "template names (bare-express, bare-hono)",
     "bare-hono",
   )
-  .action((projectName, options) => {
+  .action(async (projectName, options) => {
     console.log("Generating a new project...");
-    scafoldProject(projectName, options.template);
+    await scafoldProject(projectName, options.template);
   });
 
 program.parse(process.argv);

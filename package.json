@@ -7,17 +7,23 @@
     "plum": "dist/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prepublishOnly": "pnpm run build"
+    "postbuild": "chmod +x dist/index.js",
+    "prepublishOnly": "pnpm run build",
+    "test": "bun test"
   },
   "files": [
     "dist",
     "templates"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "scaffold",
+    "cli",
+    "generator",
+    "template"
+  ],
+  "author": "Ifeanyichukwu Sampson",
+  "license": "MIT",
   "devDependencies": {
     "@types/ejs": "^3.1.5",
     "@types/fs-extra": "^11.0.4",
