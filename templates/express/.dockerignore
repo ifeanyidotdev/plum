@@ -1,0 +1,33 @@
+# Node.js and pnpm specific
+node_modules/ # Dependencies will be installed and copied from builder stage
+pnpm-lock.yaml # Will be copied specifically
+package.json   # Will be copied specifically
+
+# Git and other VCS files
+.git
+.gitignore
+
+# Editor and OS specific files
+.vscode/
+.idea/
+*.swp
+*.bak
+*.swo
+*~
+.#*
+.DS_Store
+
+# Build artifacts (if any are not handled by your pnpm build process)
+build/
+dist/
+tmp/
+coverage/
+
+# Log files
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
