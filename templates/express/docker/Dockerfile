@@ -27,6 +27,6 @@ ENV NODE_ENV=development
 
 EXPOSE 8000
 
-CMD [ "pnpm","dev" ]
+# CMD [ "pnpm","dev" ]
 
 
