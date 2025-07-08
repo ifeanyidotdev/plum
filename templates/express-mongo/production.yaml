@@ -1,0 +1,37 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        NODE_ENV: production
+    ports:
+      - "8000:8000" 
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+        NODE_ENV: production
+        #update variables using defined screet key names
+        DATABASE_URL: mongodb://user:password@mongo:27017/myapp_dev?authSource=admin
+    command: pnpm run dev
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+  
+  database:
+    image: mongo:8.0
+    restart: always
+    environment:
+      #update variables using secret values e.g ${MONGO_DATABASE_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password 
+      MONGO_INITDB_DATABASE: myapp_dev
+    volumes:
+      - db_data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  db_data
